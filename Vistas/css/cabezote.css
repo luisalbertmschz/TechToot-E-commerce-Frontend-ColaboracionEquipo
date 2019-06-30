@@ -1,0 +1,154 @@
+/* TOP */
+
+
+#top ul{
+	padding-top:8px;
+}
+
+#top ul li{
+	display:inline;
+	line-height:30px;
+	margin:0px 5px;
+	color:white;
+}
+
+.social ul li a i{
+	font-size:18px;
+	margin:0 1px;
+}
+
+.registro ul{
+	text-align: right;
+	font-size:12px;
+}
+
+
+
+/* HEADER */
+
+header #logotipo img{
+
+    padding: 1px 100px;
+    padding-left: 0px;
+}
+
+
+header #btnCategorias{
+	margin: 29px 0;     /* TODO ELEVAMOS O BAJAMOS EL BOTON CATEGORIAS */
+	border-radius:20PX; /*TODO TRABAJAR REDONDEAR BOTONES  border-radius: 15px; */
+	
+}
+
+header #btnCategorias p{
+	line-height:40px;
+	margin-bottom:0px;
+
+}
+
+header #btnCategorias p span{
+	cursor: pointer;
+}
+
+header #buscador{
+	margin:28px 0;               /* TODO ELEVAMOS O BAJAMODEL INPUT BUSCADOR */
+	border:1px solid #232176; /*  TODO: BORDER DE TODA LA CAJA DE BUSCADOR */
+	
+	border-radius: 20px;
+}
+
+header #buscador input{
+	padding:19px;
+	border-radius:20PX;  /* TODO CAMBIAR RENDONDEZ DEL BUSCADOR */
+    border-style: none;  /* TODO QUITAMOS EL BORDER DEL BUSCADOR PARA QUE NO PAREZCA AISLADO DEL BOTÓN BUSCAR CON ICONO */
+}
+
+header #buscador button{
+	padding:9px;
+	border:1px solid #232176; /*ÚLTIMO COLOR QUE USABAMOS, SILVER*/
+	border-radius:0;
+	border-radius:20PX;   /* TODO CAMBIAR RENDONDEZ DEL ICONO BUSCADOR */
+}
+
+header #carrito{
+	margin:29px 0;
+	border-radius:20PX;
+}
+
+header #carrito button{
+	padding:9px 15px;
+	border:1px solid #232176;
+	border-radius:0;
+	border-radius:20PX;
+}
+
+header #carrito p{
+	padding:2px;
+	padding-left:60px;
+	border:1px solid #232176;
+	font-size:12px;
+	border-radius:20PX; /* TODO ESTO AFECTA EL BORDER RADIUS DEL CONTENEDOR DE LOGO E INFO CARRITO*/
+} 
+
+header #categorias{
+	display:none;
+	margin-top:-10px;
+	position: relative;
+	padding-bottom:3px;
+	margin-left:5px;
+	margin-right:40px;
+}
+
+header #categorias h4{
+	margin-top:20px;
+	margin-bottom:-10px;
+}
+
+header #categorias hr{
+	border:1px solid rgba(255,255,255,.3);
+}
+
+
+/* MEDIA QUERYS PARA DIFERENTES TAMAÑOS DE PANTALLA */
+
+/* ESCRITORIO GRANDE (LG revisamos en 1366px en adelante) */
+
+@media (min-width:1200px){
+
+
+}
+/* 
+ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px) */
+
+@media (max-width:1199px) and (min-width:992px){
+
+
+}
+
+/* ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px) */
+
+@media (max-width:991px) and (min-width:768px){
+
+    /*TODO:TERMINAR DE AJUSTAR ESTA MEDIA QUERY*/
+header #logotipo img{
+
+    padding: 50px 50px;
+    padding-left: 0px;
+}
+
+
+}
+
+/* MOVIL (XS revisamos en 320px) */
+
+@media (max-width:767px){
+
+
+header #logotipo img{
+
+    padding: 25px 100px;
+    padding-left: 0px;
+}
+}
+
+
+
