@@ -6,6 +6,13 @@
 var item = 0;
 var itemPaginacion = $("#paginacion li");
 var interrumpirCiclo = false;
+var imgProducto = $(".imgProducto");
+
+/*============= ANIMACIÓN INICIAL DE LAS IMAGENES DE PRODUCTOS DEL SLIDE ========================*/
+
+$(imgProducto[item]).animate({"top":-10 + "%", "opacity": 0}, 100)
+$(imgProducto[item]).animate({"top": 30 + "px", "opacity": 1}, 600)
+
 /*============= PAGINACIÓN========================*/
 
 
