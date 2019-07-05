@@ -249,14 +249,12 @@ PAGINACIÓN
 }
 
 
-/*=============================================
-ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
-=============================================*/
+/* ESCRITORIO GRANDE (LG revisamos en 1366px en adelante) */
 
 @media (min-width:1200px){
-
-	#slide #retroceder{
-		top:37%;
+	#slide #retroceder
+	{
+        top:37%;
 		padding:40px 15px 40px 10px;
 		font-size:22px;
 	}
@@ -281,7 +279,7 @@ ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
 	}
 
 	#slide .slideOpciones button{
-		padding:10px;
+    padding:10px;
 	}	
 
 }

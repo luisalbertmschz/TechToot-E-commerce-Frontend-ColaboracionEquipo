@@ -25,14 +25,14 @@ var titulo2 = $("#slide h2");
 var titulo3 = $("#slide h3");
 
 /* Variable para controlar el botón de cada slide de manera centralizada o global */
-var BotonProductoSlide = $();
+var BotonProductoSlide = $("#slide button");
 
 
 
 
 
 
-/*============= ANIMACIÓN INICIAL DE LAS IMAGENES DE PRODUCTOS DEL SLIDE ========================*/
+/*============= ANIMACIÓN INICIAL DE LOS ELEMENTOS DEL SLIDE ========================*/
 
 /* ANIMACIÓN IMAGENES DE PRODUCTOS DEL SLIDE */
 
@@ -50,6 +50,11 @@ $(imgProducto[item]).animate({"top": 30 + "px", "opacity": 1}, 600)
     /* h3 */
     $(titulo3[item]).animate({"top":-10 + "%", "opacity": 0}, 100)
     $(titulo3[item]).animate({"top": 30 + "px", "opacity": 1}, 600)
+
+/* ANIMACIÓN  DE LOS BOTONES "VER PRODUCTO" O "COMPRAR AHORA" DEL SLIDE */
+$(BotonProductoSlide[item]).animate({"top":-10 + "%", "opacity": 0}, 100)
+$(BotonProductoSlide[item]).animate({"top": 30 + "px", "opacity": 1}, 600)
+
             
 
 
@@ -161,6 +166,12 @@ function movimientoSlide(item){
     /* h3 */
     $(titulo3[item]).animate({"top":-10 + "%", "opacity": 0}, 100)
     $(titulo3[item]).animate({"top": 30 + "px", "opacity": 1}, 600)
+
+    /* ANIMACIÓN  DE LOS BOTONES "VER PRODUCTO" O "COMPRAR AHORA" DEL SLIDE */
+    $(BotonProductoSlide[item]).animate({"top":-10 + "%", "opacity": 0}, 100)
+    $(BotonProductoSlide[item]).animate({"top": 30 + "px", "opacity": 1}, 600)
+
+       
     
   
 
