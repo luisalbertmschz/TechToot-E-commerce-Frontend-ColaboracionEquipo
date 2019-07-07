@@ -194,13 +194,13 @@ SLIDE
 #slide #retroceder{
 	background:#232176;
 	left:0;
-	opacity: 1;
+	opacity: 0;
 }
 
 #slide #avanzar{
 	background:#232176;
 	right:0;
-	opacity: 1;
+	opacity: 0; /* LA OPACIDAD SE CAMBIO A 0 OARA QUE MEDIANTE JS APARECIERAN AL MOMENTO EN QUE EL USUARIO CON EL MOUSE SE POSISICIONARA SOBRE EL SLIDE  */
 }
 
 #slide #retroceder:hover, #slide #avanzar:hover{
