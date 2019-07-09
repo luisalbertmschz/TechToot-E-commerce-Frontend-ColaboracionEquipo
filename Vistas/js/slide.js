@@ -27,8 +27,8 @@ var titulo3 = $("#slide h3");
 /* Variable para controlar el botón de cada slide de manera centralizada o global */
 var BotonProductoSlide = $("#slide button");
 
-
-
+/* Variable que nos permitirá detener el intervalo de tiempo que tarda el slide en cambiar siempre y cuando el cursor del mouse se halle en el slide */
+var PausarTiempoCambioSlide = false;
 
 
 
@@ -157,15 +157,18 @@ function movimientoSlide(item){
 
 
     /*=====ANIMACIÓN TEXTOS DE PRODUCTOS DEL SLIDE============= */
+
     /* h1 */
     $(titulo1[item]).animate({"top":-10 + "%", "opacity": 0}, 100, "easeInOutBack")
     $(titulo1[item]).animate({"top": 30 + "px", "opacity": 1}, 600, "easeInOutBack")
+
     /* h2 */
     $(titulo2[item]).animate({"top":-10 + "%", "opacity": 0}, 100, "easeInOutBack")
     $(titulo2[item]).animate({"top": 30 + "px", "opacity": 1}, 600, "easeInOutBack")
+
     /* h3 */
     $(titulo3[item]).animate({"top":-10 + "%", "opacity": 0}, 100, "easeInOutBack")
-    $(titulo3[item]).animate({"top": 30 + "px", "opacity": 1}, 600, "easeInOutBack")
+    $(titulo3[item]).animate({"top": 30 + "px", "opacity": 1}, 600, "easeInOutBack") 
 
     /* ANIMACIÓN  DE LOS BOTONES "VER PRODUCTO" O "COMPRAR AHORA" DEL SLIDE */
     $(BotonProductoSlide[item]).animate({"top":-10 + "%", "opacity": 0}, 100, "easeInOutBack")
@@ -191,7 +194,12 @@ setInterval(function(){
      
     }else{
 
-        avanzar();
+        if(!PausarTiempoCambioSlide)
+        {
+            avanzar();
+
+        }
+
 
     }
 
@@ -200,21 +208,25 @@ setInterval(function(){
 
 
 /*=====REAPARECER / OCULTAR  - FLECHAS DEL SLIDE AL HACER MOUSEOVER O MOUSEOUT EN EL SLIDE================*/
-/* REAPARECER FLECHAS DE NEGACIÓN DEL SLIDE */
+
+/* REAPARECER FLECHAS DE NAVEGACIÓN DEL SLIDE */
 
 
 $("#slide").mouseover(function(){
 
     $("#slide #retroceder").css({"opacity":1})
     $("#slide #avanzar").css({"opacity":1})
+    PausarTiempoCambioSlide = true;
 })
 
-/* OCULTAR FLECHAS DE NEGACIÓN DEL SLIDE */
+/* OCULTAR FLECHAS DE NAVEGACIÓN DEL SLIDE */
 
 $("#slide").mouseout(function(){
 
     $("#slide #retroceder").css({"opacity":0})
     $("#slide #avanzar").css({"opacity":0})
+
+    PausarTiempoCambioSlide = false;
 
     
 })
