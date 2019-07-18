@@ -34,6 +34,10 @@ var PausarTiempoCambioSlide = false;
 var OcultarMostrarSlide = false ;
 
 
+$("#slide ul li").css({"width":100 / $("#slide ul li").length + "%"})
+$("#slide ul").css({"width":$("#slide ul li").length*100 + "%"})
+
+
 /*============= ANIMACIÓN INICIAL DE LOS ELEMENTOS DEL SLIDE ========================*/
 
 /* ANIMACIÓN IMAGENES DE PRODUCTOS DEL SLIDE */
@@ -69,69 +73,65 @@ $("#paginacion li").click(function(){
 
 
     item = $(this).attr("item")-1;
-    /* console.log("item", item); */
+ 
     movimientoSlide(item);
 
 })
 
 
-
-
-
-/*=================== FLECHA AVANZAR SLIDE DERECHA============== */
-   
-$("#slide #avanzar").click(function(){
-
-    if(item == 3){
-
-        item = 0;
-
-    }else{
-        item ++
-    }
-
-    movimientoSlide(item);
-
-
-    
-})
-
-/*===================FUNCIÓN AVANZAR ============== */
-  
 
 function avanzar(){
+    
+    $("#slide ul li").finish();
 
-    if(item == 3){
+
+    if(item == $("#slide ul li").length -1){
 
         item = 0;
 
     }else{
-        item ++
+
+        item++
     }
 
+    interrumpirCiclo = true;
+
     movimientoSlide(item);
-    
-
-
     
 }
 
 
 
-/*=================== FLECHA AVANZAR SLIDE DERECHA============== */
+  
+
+
+   
+$("#slide #avanzar").click(function(){
+
+     avanzar();
+})
+
+
+  
+
+
+
+/*=================== FLECHA AVANZAR SLIDE IZQUIERDA============== */
    
 $("#slide #retroceder").click(function(){
 
-    if (item == 0){
-        item = 3;
+	if(item == 0){
 
-    }else{
-        item --
-    }
+		item = $("#slide ul li").length -1 ;
 
-    movimientoSlide(item);
+	}else{
 
-    
+		item--
+
+	}
+
+	movimientoSlide(item);
+
 })
 
 
@@ -141,13 +141,17 @@ $("#slide #retroceder").click(function(){
 
 function movimientoSlide(item){
 
-    $("#slide ul").animate({"left": item * -100 + "%"}, 1000);
+	$("#slide ul li").finish();
 
-    $("#paginacion li").css({"opacity":.5})
+	// http://easings.net/es
 
-    $(itemPaginacion[item]).css({"opacity":1})
+	$("#slide ul").animate({"left": item * -100 + "%"}, 1000, "easeOutQuart")
 
-    interrumpirCiclo = true
+	$("#paginacion li").css({"opacity":.5})
+
+	$(itemPaginacion[item]).css({"opacity":1})
+
+	interrumpirCiclo = true;
 
 
     /*=====Animación de todos los elementos del slide================*/
@@ -189,9 +193,14 @@ function movimientoSlide(item){
 
 setInterval(function(){
 
-    if(interrumpirCiclo == true){
+    if(interrumpirCiclo){
 
-        interrumpirCiclo = false;
+        interrumpirCiclo        = false;
+
+        PausarTiempoCambioSlide = false;
+
+
+        $("#slide ul li").finish();
 
      
     }else{
@@ -217,7 +226,9 @@ setInterval(function(){
 $("#slide").mouseover(function(){
 
     $("#slide #retroceder").css({"opacity":1})
+
     $("#slide #avanzar").css({"opacity":1})
+    
     PausarTiempoCambioSlide = true;
 })
 
@@ -226,6 +237,7 @@ $("#slide").mouseover(function(){
 $("#slide").mouseout(function(){
 
     $("#slide #retroceder").css({"opacity":0})
+
     $("#slide #avanzar").css({"opacity":0})
 
     PausarTiempoCambioSlide = false;
@@ -236,10 +248,13 @@ $("#slide").mouseout(function(){
 /*=====OCULTAR EL SLIDE ================*/
 
 $("#btnSlide").click(function(){
+
     if(!OcultarMostrarSlide){
 
         OcultarMostrarSlide = true;
+
         $("#slide").slideUp("fast");
+
         $("#btnSlide").html('<i class="fa fa-angle-down"></i>');
 
 
@@ -247,7 +262,9 @@ $("#btnSlide").click(function(){
     }else{
 
         OcultarMostrarSlide = false;
+
         $("#slide").slideDown("fast");
+
         $("#btnSlide").html('<i class="fa fa-angle-up"></i>');
 
 
@@ -258,6 +275,6 @@ $("#btnSlide").click(function(){
 
 })
 
-/*=====MOSTRAR EL SLIDE LUEGO DE HABERLO OCULTADO ================*/
+
 
  
