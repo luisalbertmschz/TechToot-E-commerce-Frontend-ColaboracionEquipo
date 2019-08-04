@@ -52,6 +52,7 @@
 
         <link rel="stylesheet" href="<?php echo $url;?>Vistas/css/plugins/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo $url;?>Vistas/css/plugins/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="<?php echo $url;?>Vistas/css/slide.css">
         
         
@@ -79,6 +80,7 @@
         <script src="<?php echo $url;?>Vistas/js/plugins/jquery.min.js"></script>
         <script src="<?php echo $url;?>Vistas/js/plugins/bootstrap.min.js"></script>
         <script src="<?php echo $url;?>Vistas/js/plugins/jquery.easing.js"></script>
+        <script src="<?php echo $url;?>Vistas/js/plugins/jquery.scrollUp.js"></script>
     
 
             
