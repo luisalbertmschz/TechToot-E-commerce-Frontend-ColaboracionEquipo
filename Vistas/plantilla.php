@@ -109,7 +109,7 @@
         en ese sentido si la ruta o las rutas */
           $rutas = array();
           $ruta = null;
-          
+          $infoProducto=null;
 
 
           /* ANALIZAMOS y verificamos  qu[e se est[a enviado en la variable GET <ruta> que definimos en Modelos/ruta.php para manejar mejor las url amigables de la pagina */

@@ -8,7 +8,7 @@ class Ruta {
 
     public function ctrRuta(){
 
-        return"http://localhost/E-commerce-/";
+        return"http://localhost/ProyectoFinal/";
 
 
     }
